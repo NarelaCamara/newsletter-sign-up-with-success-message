@@ -1,6 +1,8 @@
 import "./App.css";
 import illustrationSignUpMobile from "./assets/illustration-sign-up-mobile.svg";
 
+import iconList from "./assets/icon-list.svg";
+
 //import illustrationSignUpTablet from "./assets/illustration-sign-up-tablet.svg";
 //import illustrationSignUDesktop from "./assets/illustration-sign-up-desktop.svg";
 
@@ -13,7 +15,7 @@ function App() {
             src={illustrationSignUpMobile}
             alt="illustration-sign-up-mobile"
           />
-          <div className="flex flex-col py-10">
+          <div className="flex flex-col py-10 w-[327px]">
             <h1 className="text-[Roboto] text-[40px] text-[#242742] font-semibold">
               Stay updated!
             </h1>
@@ -23,28 +25,49 @@ function App() {
             </p>
 
             <ul>
-              <li className=" list-image-icon-list text-[Roboto] text-[16px] text-[#242742] font-medium">
-                Product discovery and building what matters
+              <li className="flex flex-row items-start p-2">
+                <img
+                  src={iconList}
+                  alt="icon-list"
+                  className="pr-4 leading-[150%]"
+                />
+                <p className="text-[Roboto] text-[16px] text-[#242742] font-medium  ">
+                  Product discovery and building what matters
+                </p>
               </li>
-              <li className=" list-image-icon-list text-[Roboto] text-[16px] text-[#242742] font-medium">
-                Measuring to ensure updates are a success
+              <li className="flex flex-row items-start p-2">
+                <img
+                  src={iconList}
+                  alt="icon-list"
+                  className="pr-4 leading-[150%]"
+                />
+                <p className="text-[Roboto] text-[16px] text-[#242742] font-medium  ">
+                  Measuring to ensure updates are a success
+                </p>
               </li>
-              <li className=" list-image-icon-list text-[Roboto] text-[16px] text-[#242742] font-medium">
-                And much more!
+              <li className="flex flex-row items-start p-2">
+                <img
+                  src={iconList}
+                  alt="icon-list"
+                  className="pr-4 leading-[150%]"
+                />
+                <p className="text-[Roboto] text-[16px] text-[#242742] font-medium  ">
+                  And much more!
+                </p>
               </li>
             </ul>
           </div>
 
           <div className="flex flex-col">
-            <span className="text-[Roboto] text-[12px] text-[#242742] font-medium">
+            <span className="text-[Roboto] text-[12px] text-[#242742] font-medium p-1">
               Email address
             </span>
             <input
               type="text"
-              className="w-full p-4 text-[Roboto] text-[16px] text-[#949494]"
-              value={"email@company.com"}
+              className="w-full p-4 text-[Roboto] text-[16px] text-[#949494] rounded-lg border border-solid border-[#949494]"
+              placeholder={"email@company.com"}
             />
-            <button className="w-full bg-[#242742] p-4 mt-6">
+            <button className="w-full bg-[#242742] p-4 mt-6 rounded-lg">
               <p className="text-[Roboto] text-[16px] text-white font-medium">
                 Subscribe to monthly newsletter
               </p>
