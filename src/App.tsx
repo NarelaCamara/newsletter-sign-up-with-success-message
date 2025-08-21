@@ -66,13 +66,19 @@ function App() {
               Email address
             </span>
 
-            <span className="text-[Roboto] text-[12px] text-[#FF6155]  font-medium p-1">
-              Valid email required
-            </span>
+            {!valid && (
+              <span className="text-[Roboto] text-[12px] text-[#FF6155]  font-medium p-1">
+                Valid email required
+              </span>
+            )}
           </div>
           <input
             type="text"
-            className="w-full p-4 text-[Roboto] text-[16px] text-[#949494] rounded-lg border border-solid border-[#949494]"
+            className={`w-full p-4 text-[Roboto] text-[16px]  rounded-lg border border-solid  ${
+              valid
+                ? "text-[#949494] border-[#949494]"
+                : "text-[#FF6155]  bg-[#FFE7E6] border-[#FF6155]"
+            } `}
             placeholder={"email@company.com"}
           />
           <button
