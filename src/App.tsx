@@ -4,7 +4,7 @@ import iconSuccess from "./assets/icon-success.svg";
 import iconList from "./assets/icon-list.svg";
 import { useState } from "react";
 
-//import illustrationSignUpTablet from "./assets/illustration-sign-up-tablet.svg";
+import illustrationSignUpTablet from "./assets/illustration-sign-up-tablet.svg";
 //import illustrationSignUDesktop from "./assets/illustration-sign-up-desktop.svg";
 
 function App() {
@@ -22,102 +22,111 @@ function App() {
     <>
       <div className="flex items-start justify-center min-h-screen bg-white">
         {!fakeSend && (
-          <div className=" flex flex-col justify-between  w-[327px]  h-[100vh]  pb-10">
-            <div className="">
-              <img
-                src={illustrationSignUpMobile}
-                alt="illustration-sign-up-mobile"
-              />
-              <div className="flex flex-col py-10 w-[327px]">
-                <h1 className="text-[Roboto] text-[40px] text-[#242742] font-semibold">
-                  Stay updated!
-                </h1>
+          <div className=" min-sm:border  h-[100vh] min-sm:h-[878px] w-[327px] min-sm:w-[608px]">
+            <div className=" flex flex-col justify-between     pb-10 min-sm:p-10">
+              <div className=" ">
+                <img
+                  src={illustrationSignUpMobile}
+                  alt="illustration-sign-up-mobile"
+                  className="max-sm:block hidden"
+                />
 
-                <p className="text-[Roboto] text-[16px] color-[#242742] font-medium py-6">
-                  Join 60,000+ product managers receiving monthly updates on:
-                </p>
+                <img
+                  src={illustrationSignUpTablet}
+                  alt="illustration-sign-up-tablet"
+                  className="min-sm:block hidden"
+                />
+                <div className="flex flex-col py-10 w-[327px]">
+                  <h1 className="text-[Roboto] text-[40px] text-[#242742] font-semibold">
+                    Stay updated!
+                  </h1>
 
-                <ul>
-                  <li className="flex flex-row items-start p-2">
-                    <img
-                      src={iconList}
-                      alt="icon-list"
-                      className="pr-4 leading-[150%]"
-                    />
-                    <p className="text-[Roboto] text-[16px] text-[#242742] font-medium  ">
-                      Product discovery and building what matters
-                    </p>
-                  </li>
-                  <li className="flex flex-row items-start p-2">
-                    <img
-                      src={iconList}
-                      alt="icon-list"
-                      className="pr-4 leading-[150%]"
-                    />
-                    <p className="text-[Roboto] text-[16px] text-[#242742] font-medium  ">
-                      Measuring to ensure updates are a success
-                    </p>
-                  </li>
-                  <li className="flex flex-row items-start p-2">
-                    <img
-                      src={iconList}
-                      alt="icon-list"
-                      className="pr-4 leading-[150%]"
-                    />
-                    <p className="text-[Roboto] text-[16px] text-[#242742] font-medium  ">
-                      And much more!
-                    </p>
-                  </li>
-                </ul>
-              </div>
+                  <p className="text-[Roboto] text-[16px] color-[#242742] font-medium py-6">
+                    Join 60,000+ product managers receiving monthly updates on:
+                  </p>
 
-              <div className="flex flex-row justify-between">
-                <span className="text-[Roboto] text-[12px] text-[#242742] font-medium p-1">
-                  Email address
-                </span>
+                  <ul>
+                    <li className="flex flex-row items-start p-2">
+                      <img
+                        src={iconList}
+                        alt="icon-list"
+                        className="pr-4 leading-[150%]"
+                      />
+                      <p className="text-[Roboto] text-[16px] text-[#242742] font-medium  ">
+                        Product discovery and building what matters
+                      </p>
+                    </li>
+                    <li className="flex flex-row items-start p-2">
+                      <img
+                        src={iconList}
+                        alt="icon-list"
+                        className="pr-4 leading-[150%]"
+                      />
+                      <p className="text-[Roboto] text-[16px] text-[#242742] font-medium  ">
+                        Measuring to ensure updates are a success
+                      </p>
+                    </li>
+                    <li className="flex flex-row items-start p-2">
+                      <img
+                        src={iconList}
+                        alt="icon-list"
+                        className="pr-4 leading-[150%]"
+                      />
+                      <p className="text-[Roboto] text-[16px] text-[#242742] font-medium  ">
+                        And much more!
+                      </p>
+                    </li>
+                  </ul>
+                </div>
 
-                {valid === State_Email.No_Valid && (
-                  <span className="text-[Roboto] text-[12px] text-[#FF6155]  font-medium p-1">
-                    Valid email required
+                <div className="flex flex-row justify-between">
+                  <span className="text-[Roboto] text-[12px] text-[#242742] font-medium p-1">
+                    Email address
                   </span>
-                )}
-              </div>
-              <input
-                type="text"
-                className={`w-full p-4 text-[Roboto] text-[16px]  rounded-lg border border-solid  ${
-                  valid !== State_Email.No_Valid
-                    ? "text-[#949494] border-[#949494]"
-                    : "text-[#FF6155]  bg-[#FFE7E6] border-[#FF6155]"
-                } `}
-                placeholder={"email@company.com"}
-                onChange={(e) => {
-                  e.preventDefault();
-                  setEmail(e.target.value);
-                  const emailRegex =
-                    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-                  const result = emailRegex.test(e.target.value)
-                    ? State_Email.Valid
-                    : State_Email.No_Valid;
-                  console.log("result", result);
-                  setValid(result);
+                  {valid === State_Email.No_Valid && (
+                    <span className="text-[Roboto] text-[12px] text-[#FF6155]  font-medium p-1">
+                      Valid email required
+                    </span>
+                  )}
+                </div>
+                <input
+                  type="text"
+                  className={`w-full p-4 text-[Roboto] text-[16px]  rounded-lg border border-solid  ${
+                    valid !== State_Email.No_Valid
+                      ? "text-[#949494] border-[#949494]"
+                      : "text-[#FF6155]  bg-[#FFE7E6] border-[#FF6155]"
+                  } `}
+                  placeholder={"email@company.com"}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setEmail(e.target.value);
+                    const emailRegex =
+                      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+                    const result = emailRegex.test(e.target.value)
+                      ? State_Email.Valid
+                      : State_Email.No_Valid;
+                    console.log("result", result);
+                    setValid(result);
+                  }}
+                />
+              </div>
+              <button
+                onClick={() => {
+                  setFakeSend(valid === State_Email.Valid);
                 }}
-              />
+                className="w-full bg-[#242742] p-4 mt-6 rounded-lg"
+              >
+                <p className="text-[Roboto] text-[16px] text-white font-medium">
+                  Subscribe to monthly newsletter
+                </p>
+              </button>
             </div>
-            <button
-              onClick={() => {
-                setFakeSend(valid === State_Email.Valid);
-              }}
-              className="w-full bg-[#242742] p-4 mt-6 rounded-lg"
-            >
-              <p className="text-[Roboto] text-[16px] text-white font-medium">
-                Subscribe to monthly newsletter
-              </p>
-            </button>
           </div>
         )}
         {fakeSend && (
-          <div className=" flex flex-col justify-between  w-[327px]  h-[100vh]  py-10">
+          <div className=" flex flex-col justify-between  w-[327px]  h-[100vh]  py-10 min-sm:p-10">
             <div className="flex flex-col justify-between">
               {" "}
               <img src={iconSuccess} alt="icon-success" className="w-16" />
