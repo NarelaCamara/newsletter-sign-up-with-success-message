@@ -49,16 +49,18 @@ export const Login = ({
             Join 60,000+ product managers receiving monthly updates on:
           </p>
           <Checklist />
-          <Input
-            error={valid === State_Email.No_Valid}
-            email={email}
-            setEmail={setEmail}
-            handleValid={handleValid}
-          />
-          <Button
-            handleFakeSend={handleFakeSend}
-            text="Subscribe to monthly newsletter"
-          />
+          <div className="max-sm:relative">
+            <Input
+              error={valid === State_Email.No_Valid}
+              email={email}
+              setEmail={setEmail}
+              handleValid={handleValid}
+            />
+            <Button
+              handleFakeSend={handleFakeSend}
+              text="Subscribe to monthly newsletter"
+            />
+          </div>
         </div>
       </div>
     </div>
