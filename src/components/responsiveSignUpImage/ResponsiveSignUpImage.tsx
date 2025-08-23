@@ -1,6 +1,7 @@
 import illustrationSignUpMobile from "../../assets/illustration-sign-up-mobile.svg";
 import illustrationSignUpTablet from "../../assets/illustration-sign-up-tablet.svg";
 import illustrationSignUDesktop from "../../assets/illustration-sign-up-desktop.svg";
+
 export const ResponsiveSignUpImage = () => {
   return (
     <div>

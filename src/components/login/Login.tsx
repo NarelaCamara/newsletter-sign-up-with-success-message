@@ -1,7 +1,6 @@
-import iconList from "../../assets/icon-list.svg";
-
 import { useEffect, useState } from "react";
 import { ResponsiveSignUpImage } from "../responsiveSignUpImage/ResponsiveSignUpImage";
+import { Checklist } from "../checklist/Checklist";
 
 enum State_Email {
   No_State = "1",
@@ -38,39 +37,7 @@ export const Login = ({
           <p className="text-[Roboto] text-[16px] color-[#242742] font-medium py-6">
             Join 60,000+ product managers receiving monthly updates on:
           </p>
-
-          <ul>
-            <li className="flex flex-row items-start p-0.5">
-              <img
-                src={iconList}
-                alt="icon-list"
-                className="pr-4 leading-[150%]"
-              />
-              <p className="text-[Roboto] text-[16px] text-[#242742] font-medium  ">
-                Product discovery and building what matters
-              </p>
-            </li>
-            <li className="flex flex-row items-start p-0.5">
-              <img
-                src={iconList}
-                alt="icon-list"
-                className="pr-4 leading-[150%]"
-              />
-              <p className="text-[Roboto] text-[16px] text-[#242742] font-medium  ">
-                Measuring to ensure updates are a success
-              </p>
-            </li>
-            <li className="flex flex-row items-start p-0.5">
-              <img
-                src={iconList}
-                alt="icon-list"
-                className="pr-4 leading-[150%]"
-              />
-              <p className="text-[Roboto] text-[16px] text-[#242742] font-medium  ">
-                And much more!
-              </p>
-            </li>
-          </ul>
+          <Checklist />
         </div>
 
         <div className="flex flex-row justify-between">
