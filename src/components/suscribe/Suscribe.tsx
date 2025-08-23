@@ -1,4 +1,5 @@
 import iconSuccess from "../../assets/icon-success.svg";
+import { Button } from "../button/Button";
 
 export const Suscribe = ({ setFakeSend }: { setFakeSend: Function }) => {
   return (
@@ -19,16 +20,12 @@ export const Suscribe = ({ setFakeSend }: { setFakeSend: Function }) => {
           </p>
         </div>
 
-        <button
-          onClick={() => {
+        <Button
+          handleFakeSend={() => {
             setFakeSend(false);
           }}
-          className="w-full bg-[#242742] p-4 mt-6 rounded-lg"
-        >
-          <p className="text-[Roboto] text-[16px] text-white font-medium  ">
-            Dismiss message
-          </p>
-        </button>
+          text="Dismiss message"
+        />
       </div>
     </div>
   );

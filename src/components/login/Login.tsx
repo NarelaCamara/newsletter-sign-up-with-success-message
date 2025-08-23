@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ResponsiveSignUpImage } from "../responsiveSignUpImage/ResponsiveSignUpImage";
 import { Checklist } from "../checklist/Checklist";
 import { Input } from "../input/Input";
+import { Button } from "../button/Button";
 
 enum State_Email {
   No_State = "1",
@@ -34,6 +35,10 @@ export const Login = ({
     setValid(result);
   };
 
+  const handleFakeSend = () => {
+    setFakeSend(valid === State_Email.Valid);
+  };
+
   return (
     <div className="bg-white md:border-0  md:rounded-[36px] max-md:w-[327px] max-md:h-[100vh] md:p-10">
       <div className="pb-10 flex flex-col lg:flex-row-reverse">
@@ -53,16 +58,10 @@ export const Login = ({
             setEmail={setEmail}
             handleValid={handleValid}
           />
-          <button
-            onClick={() => {
-              setFakeSend(valid === State_Email.Valid);
-            }}
-            className="w-full bg-[#242742] p-4 mt-6 rounded-lg"
-          >
-            <p className="text-[Roboto] text-[16px] text-white font-medium">
-              Subscribe to monthly newsletter
-            </p>
-          </button>
+          <Button
+            handleFakeSend={handleFakeSend}
+            text="Subscribe to monthly newsletter"
+          />
         </div>
       </div>
     </div>
