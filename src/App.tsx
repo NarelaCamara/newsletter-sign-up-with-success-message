@@ -22,8 +22,8 @@ function App() {
     <>
       <div className="flex items-start justify-center min-h-screen bg-white">
         {!fakeSend && (
-          <div className=" min-sm:border  max-sm:h-[100vh]">
-            <div className=" flex flex-col justify-between pb-10 md:p-0.50 border p-10">
+          <div className="min-sm:border">
+            <div className=" flex flex-col justify-between pb-10 md:p-0.50 p-10 max-sm:w-[327px]  max-sm:h-[100vh]">
               <div className="">
                 <img
                   src={illustrationSignUpMobile}
