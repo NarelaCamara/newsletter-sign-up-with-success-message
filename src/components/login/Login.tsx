@@ -40,11 +40,10 @@ export const Login = ({
   };
 
   return (
-    <div className="bg-white md:border-0  md:rounded-[36px] max-md:w-[327px] max-md:h-[100vh] md:p-10">
-      <div className="pb-10 flex flex-col lg:flex-row-reverse">
+    <div className="bg-white md:border-0  md:rounded-[36px] md:p-10  md:py-6 lg:p-8">
+      <div className="flex flex-col lg:flex-row-reverse">
         <ResponsiveSignUpImage />
-
-        <div className="flex flex-col  md:py-6 max-md:w-[327px]">
+        <div className="flex flex-col">
           <h1 className="text-[Roboto] text-[40px] text-[#242742] font-semibold">
             Stay updated!
           </h1>
