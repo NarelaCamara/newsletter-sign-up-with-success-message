@@ -40,7 +40,7 @@ export const Login = ({
   };
 
   return (
-    <div className="bg-white min-sm:border-0  min-sm:rounded-[36px] min-sm:p-10  min-sm:py-6 lg:p-8">
+    <div className="bg-white min-sm:border-0 min-w-[375px] min-sm:rounded-[36px] min-sm:p-10  lg:p-8 max-sm:max-w-[375px] ">
       <div className="flex flex-col lg:flex-row-reverse">
         <ResponsiveSignUpImage />
         <div className="flex flex-col lg:w-[448px] lg:justify-center lg:pr-16">
