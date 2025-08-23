@@ -43,11 +43,11 @@ export const Login = ({
     <div className="bg-white md:border-0  md:rounded-[36px] md:p-10  md:py-6 lg:p-8">
       <div className="flex flex-col lg:flex-row-reverse">
         <ResponsiveSignUpImage />
-        <div className="flex flex-col">
-          <h1 className="text-[Roboto] text-[40px] text-[#242742] font-semibold">
+        <div className="flex flex-col lg:w-[448px] lg:justify-center lg:pr-16">
+          <h1 className="text-[Roboto] text-[40px] md:text-[56px] text-[#242742] font-semibold">
             Stay updated!
           </h1>
-          <p className="text-[Roboto] text-[16px] color-[#242742] font-medium py-6">
+          <p className="text-[Roboto] text-[16px] color-[#242742] font-medium pt-6">
             Join 60,000+ product managers receiving monthly updates on:
           </p>
           <Checklist />

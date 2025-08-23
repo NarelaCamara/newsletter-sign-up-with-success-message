@@ -2,7 +2,7 @@ import iconList from "../../assets/icon-list.svg";
 
 export const Checklist = () => {
   return (
-    <ul>
+    <ul className="py-6">
       <li className="flex flex-row items-start p-0.5">
         <img src={iconList} alt="icon-list" className="pr-4 leading-[150%]" />
         <p className="text-[Roboto] text-[16px] text-[#242742] font-medium  ">
