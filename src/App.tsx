@@ -22,21 +22,21 @@ function App() {
     <>
       <div className="flex items-start justify-center min-h-screen bg-white">
         {!fakeSend && (
-          <div className=" min-sm:border  h-[100vh] min-sm:h-[878px] w-[327px] min-sm:w-[608px]">
-            <div className=" flex flex-col justify-between     pb-10 min-sm:p-10">
-              <div className=" ">
+          <div className=" min-sm:border  max-sm:h-[100vh]">
+            <div className=" flex flex-col justify-between pb-10 md:p-0.50 border p-10">
+              <div className="">
                 <img
                   src={illustrationSignUpMobile}
                   alt="illustration-sign-up-mobile"
-                  className="max-sm:block hidden"
+                  className="max-md:block hidden"
                 />
 
                 <img
                   src={illustrationSignUpTablet}
                   alt="illustration-sign-up-tablet"
-                  className="min-sm:block hidden"
+                  className="md:block hidden w-[528px] "
                 />
-                <div className="flex flex-col py-10 w-[327px]">
+                <div className="flex flex-col  md:py-6 max-md:w-[327px]">
                   <h1 className="text-[Roboto] text-[40px] text-[#242742] font-semibold">
                     Stay updated!
                   </h1>
@@ -46,7 +46,7 @@ function App() {
                   </p>
 
                   <ul>
-                    <li className="flex flex-row items-start p-2">
+                    <li className="flex flex-row items-start p-0.5">
                       <img
                         src={iconList}
                         alt="icon-list"
@@ -56,7 +56,7 @@ function App() {
                         Product discovery and building what matters
                       </p>
                     </li>
-                    <li className="flex flex-row items-start p-2">
+                    <li className="flex flex-row items-start p-0.5">
                       <img
                         src={iconList}
                         alt="icon-list"
@@ -66,7 +66,7 @@ function App() {
                         Measuring to ensure updates are a success
                       </p>
                     </li>
-                    <li className="flex flex-row items-start p-2">
+                    <li className="flex flex-row items-start p-0.5">
                       <img
                         src={iconList}
                         alt="icon-list"
@@ -80,12 +80,12 @@ function App() {
                 </div>
 
                 <div className="flex flex-row justify-between">
-                  <span className="text-[Roboto] text-[12px] text-[#242742] font-medium p-1">
+                  <span className="text-[Roboto] text-[12px] text-[#242742] font-medium p-0.5">
                     Email address
                   </span>
 
                   {valid === State_Email.No_Valid && (
-                    <span className="text-[Roboto] text-[12px] text-[#FF6155]  font-medium p-1">
+                    <span className="text-[Roboto] text-[12px] text-[#FF6155]  font-medium p-0.5">
                       Valid email required
                     </span>
                   )}
@@ -126,7 +126,7 @@ function App() {
           </div>
         )}
         {fakeSend && (
-          <div className=" flex flex-col justify-between  w-[327px]  h-[100vh]  py-10 min-sm:p-10">
+          <div className=" flex flex-col justify-between  w-[327px]   py-10 md:p-0.50">
             <div className="flex flex-col justify-between">
               {" "}
               <img src={iconSuccess} alt="icon-success" className="w-16" />
