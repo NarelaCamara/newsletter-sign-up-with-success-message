@@ -8,7 +8,7 @@ function App() {
   const [fakeSend, setFakeSend] = useState(false);
 
   return (
-    <div className="flex items-start justify-center min-h-screen md:bg-[#242742]">
+    <div className="flex items-start justify-center min-h-screen min-sm:bg-[#242742]">
       {!fakeSend && <Login setFakeSend={setFakeSend} fakeSend={fakeSend} />}
       {fakeSend && <Suscribe setFakeSend={setFakeSend} />}
     </div>

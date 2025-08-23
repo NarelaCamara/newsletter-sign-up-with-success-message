@@ -40,11 +40,11 @@ export const Login = ({
   };
 
   return (
-    <div className="bg-white md:border-0  md:rounded-[36px] md:p-10  md:py-6 lg:p-8">
+    <div className="bg-white min-sm:border-0  min-sm:rounded-[36px] min-sm:p-10  min-sm:py-6 lg:p-8">
       <div className="flex flex-col lg:flex-row-reverse">
         <ResponsiveSignUpImage />
         <div className="flex flex-col lg:w-[448px] lg:justify-center lg:pr-16">
-          <h1 className="text-[Roboto] text-[40px] md:text-[56px] text-[#242742] font-semibold">
+          <h1 className="text-[Roboto] text-[40px] min-sm:text-[56px] text-[#242742] font-semibold">
             Stay updated!
           </h1>
           <p className="text-[Roboto] text-[16px] color-[#242742] font-medium pt-6">

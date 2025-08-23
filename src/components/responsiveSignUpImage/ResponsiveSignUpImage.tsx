@@ -8,13 +8,13 @@ export const ResponsiveSignUpImage = () => {
       <img
         src={illustrationSignUpMobile}
         alt="illustration-sign-up-mobile"
-        className="max-md:block hidden"
+        className="max-sm:block hidden"
       />
 
       <img
         src={illustrationSignUpTablet}
         alt="illustration-sign-up-tablet"
-        className="md:block hidden lg:hidden w-[528px]"
+        className="min-sm:block hidden lg:hidden w-[528px]"
       />
 
       <img
