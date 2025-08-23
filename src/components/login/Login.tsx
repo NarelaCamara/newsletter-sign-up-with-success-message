@@ -13,7 +13,7 @@ export const Login = ({
   setFakeSend,
   fakeSend,
 }: {
-    setFakeSend: Function;
+  setFakeSend: Function;
   fakeSend: boolean;
 }) => {
   const [email, setEmail] = useState("");
@@ -36,34 +36,33 @@ export const Login = ({
 
   return (
     <div className="bg-white md:border-0  md:rounded-[36px] max-md:w-[327px] max-md:h-[100vh] md:p-10">
-      <div>
-        <div className="pb-10 flex flex-col">
-          <ResponsiveSignUpImage />
-          <div className="flex flex-col  md:py-6 max-md:w-[327px]">
-            <h1 className="text-[Roboto] text-[40px] text-[#242742] font-semibold">
-              Stay updated!
-            </h1>
-            <p className="text-[Roboto] text-[16px] color-[#242742] font-medium py-6">
-              Join 60,000+ product managers receiving monthly updates on:
+      <div className="pb-10 flex flex-col lg:flex-row-reverse">
+        <ResponsiveSignUpImage />
+
+        <div className="flex flex-col  md:py-6 max-md:w-[327px]">
+          <h1 className="text-[Roboto] text-[40px] text-[#242742] font-semibold">
+            Stay updated!
+          </h1>
+          <p className="text-[Roboto] text-[16px] color-[#242742] font-medium py-6">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <Checklist />
+          <Input
+            error={valid === State_Email.No_Valid}
+            email={email}
+            setEmail={setEmail}
+            handleValid={handleValid}
+          />
+          <button
+            onClick={() => {
+              setFakeSend(valid === State_Email.Valid);
+            }}
+            className="w-full bg-[#242742] p-4 mt-6 rounded-lg"
+          >
+            <p className="text-[Roboto] text-[16px] text-white font-medium">
+              Subscribe to monthly newsletter
             </p>
-            <Checklist />
-            <Input
-              error={valid === State_Email.No_Valid}
-              email={email}
-              setEmail={setEmail}
-              handleValid={handleValid}
-            />
-            <button
-              onClick={() => {
-                setFakeSend(valid === State_Email.Valid);
-              }}
-              className="w-full bg-[#242742] p-4 mt-6 rounded-lg"
-            >
-              <p className="text-[Roboto] text-[16px] text-white font-medium">
-                Subscribe to monthly newsletter
-              </p>
-            </button>
-          </div>
+          </button>
         </div>
       </div>
     </div>
