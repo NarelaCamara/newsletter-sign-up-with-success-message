@@ -30,8 +30,6 @@ export const Login = ({
     const result = emailRegex.test(value)
       ? State_Email.Valid
       : State_Email.No_Valid;
-    console.log("result", result);
-
     setValid(result);
   };
 
