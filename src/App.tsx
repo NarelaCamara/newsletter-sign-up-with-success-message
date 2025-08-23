@@ -19,11 +19,11 @@ function App() {
 
   console.log(fakeSend, valid, email);
   return (
-    <>
-      <div className="flex items-start justify-center min-h-screen bg-white">
-        {!fakeSend && (
-          <div className="min-sm:border">
-            <div className=" flex flex-col justify-between pb-10 md:p-0.50 p-10 max-sm:w-[327px]  max-sm:h-[100vh]">
+    <div className="">
+      <div className="flex items-start justify-center min-h-screen md:bg-[#242742]">
+        <div className="md:border-0 bg-white md:rounded-[36px] max-md:w-[327px]  max-md:h-[100vh]">
+          {!fakeSend && (
+            <div className=" flex flex-col justify-between pb-10 md:p-0.50 md:p-10  ">
               <div className="">
                 <img
                   src={illustrationSignUpMobile}
@@ -123,42 +123,42 @@ function App() {
                 </p>
               </button>
             </div>
-          </div>
-        )}
-        {fakeSend && (
-          <div className=" flex flex-col justify-between  w-[327px]   py-10 md:p-0.50">
-            <div className="flex flex-col justify-between">
-              {" "}
-              <img src={iconSuccess} alt="icon-success" className="w-16" />
-              <h1 className="text-[Roboto] text-[40px] font-bold py-8">
-                Thanks for subscribing!
-              </h1>
-              <p className="text-[Roboto] text-[16px] text-[#242742] font-normal">
-                A confirmation email has been sent to{" "}
-                <span className="text-[Roboto] text-[16px] text-[#242742] font-medium">
-                  ash@loremcompany.com
-                </span>
-                . Please open it and click the button inside to confirm your
-                subscription
-              </p>
-            </div>
+          )}
+          {fakeSend && (
+            <div className=" flex flex-col justify-between pb-10 md:p-0.50 md:p-10  ">
+              <div className="flex flex-col justify-between">
+                {" "}
+                <img src={iconSuccess} alt="icon-success" className="w-16" />
+                <h1 className="text-[Roboto] text-[40px] font-bold py-8">
+                  Thanks for subscribing!
+                </h1>
+                <p className="text-[Roboto] text-[16px] text-[#242742] font-normal">
+                  A confirmation email has been sent to{" "}
+                  <span className="text-[Roboto] text-[16px] text-[#242742] font-medium">
+                    ash@loremcompany.com
+                  </span>
+                  . Please open it and click the button inside to confirm your
+                  subscription
+                </p>
+              </div>
 
-            <button
-              onClick={() => {
-                setValid(State_Email.No_State);
-                setEmail("");
-                setFakeSend(false);
-              }}
-              className="w-full bg-[#242742] p-4 mt-6 rounded-lg"
-            >
-              <p className="text-[Roboto] text-[16px] text-white font-medium  ">
-                Dismiss message
-              </p>
-            </button>
-          </div>
-        )}
+              <button
+                onClick={() => {
+                  setValid(State_Email.No_State);
+                  setEmail("");
+                  setFakeSend(false);
+                }}
+                className="w-full bg-[#242742] p-4 mt-6 rounded-lg"
+              >
+                <p className="text-[Roboto] text-[16px] text-white font-medium  ">
+                  Dismiss message
+                </p>
+              </button>
+            </div>
+          )}
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
