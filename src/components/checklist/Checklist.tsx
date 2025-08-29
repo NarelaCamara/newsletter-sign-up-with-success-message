@@ -20,7 +20,7 @@ export const Checklist = () => {
       // Selecciona todos los <p> dentro de los <li>
       const paragraphs = q("li p");
 
-      const split = SplitText.create(paragraphs, { type: "chars" });
+      const split = SplitText.create(paragraphs, { type: "words,chars" });
       //now animate each character into place from 20px below, fading in:
       gsap.from(split.chars, {
         y: 20,

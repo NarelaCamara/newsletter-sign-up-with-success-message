@@ -29,7 +29,7 @@ export const Suscribe = ({ setFakeSend }: { setFakeSend: Function }) => {
 
     gsap.registerPlugin(SplitText);
 
-    const split = SplitText.create(title.current, { type: "words" });
+    const split = SplitText.create(title.current, { type: "words,chars" });
     const paragraphs_split = SplitText.create(paragraphs.current, {
       type: "chars",
     });

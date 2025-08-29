@@ -62,7 +62,7 @@ export const Login = ({
 
     gsap.registerPlugin(SplitText);
 
-    const split = SplitText.create(title.current, { type: "chars" });
+    const split = SplitText.create(title.current, { type: "words,chars" });
     const paragraphs_split = SplitText.create(paragraphs.current, {
       type: "chars",
     });
