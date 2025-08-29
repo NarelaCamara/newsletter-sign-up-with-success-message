@@ -27,8 +27,8 @@ export const Input = ({
         value={email}
         className={`w-full p-4 text-[Roboto] text-[16px]  rounded-lg border border-solid  ${
           error
-            ? "text-[#949494] border-[#949494]"
-            : "text-[#FF6155]  bg-[#FFE7E6] border-[#FF6155]"
+            ? "text-[#FF6155]  bg-[#FFE7E6] border-[#FF6155]"
+            : "text-[#949494] border-[#949494]"
         } `}
         placeholder={"email@company.com"}
         onChange={(e) => {
