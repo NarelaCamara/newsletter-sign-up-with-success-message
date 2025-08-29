@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ResponsiveSignUpImage } from "../responsiveSignUpImage/ResponsiveSignUpImage";
 import { Checklist } from "../checklist/Checklist";
 import { Input } from "../input/Input";
 import { Button } from "../button/Button";
+import gsap from "gsap";
 
 enum State_Email {
   No_State = "1",
@@ -37,8 +38,24 @@ export const Login = ({
     setFakeSend(valid === State_Email.Valid);
   };
 
+  ///UI
+  const container = useRef(null);
+
+  useEffect(() => {
+    gsap.to(container.current, {
+      duration: 2.5,
+      ease: "elastic.out(1,0.3)",
+      y: 20,
+
+      yoyo: true, // vuelve a la posición original
+    });
+  }, []);
+
   return (
-    <div className="bg-white min-sm:border-0 min-w-[375px] min-sm:rounded-[36px] min-sm:p-10  lg:p-8 max-sm:max-w-[375px] ">
+    <div
+      ref={container}
+      className="bg-white min-sm:border-0 min-w-[375px] min-sm:rounded-[36px] min-sm:p-10  lg:p-8 max-sm:max-w-[375px] "
+    >
       <div className="flex flex-col lg:flex-row-reverse">
         <ResponsiveSignUpImage />
         <div className="flex flex-col lg:w-[448px] lg:justify-center lg:pr-16">

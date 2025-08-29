@@ -1,12 +1,36 @@
+import { useEffect, useRef } from "react";
 import iconSuccess from "../../assets/icon-success.svg";
 import { Button } from "../button/Button";
+import gsap from "gsap";
 
 export const Suscribe = ({ setFakeSend }: { setFakeSend: Function }) => {
+  const container = useRef(null);
+
+  const icon = useRef(null);
+
+  useEffect(() => {
+    gsap.to(icon.current, {
+      duration: 2.5,
+      ease: "elastic.out(1,0.3)",
+      y: 20,
+
+      yoyo: true, // vuelve a la posición original
+    });
+  }, []);
+
   return (
-    <div className="bg-white flex flex-col rounded-[36px] p-16 w-[504px]">
+    <div
+      ref={container}
+      className="bg-white flex flex-col rounded-[36px] p-16 w-[504px]"
+    >
       <div className=" flex flex-col justify-between">
         <div className="flex flex-col justify-between">
-          <img src={iconSuccess} alt="icon-success" className="w-16" />
+          <img
+            src={iconSuccess}
+            alt="icon-success"
+            className="w-16"
+            ref={icon}
+          />
           <h1 className="text-[Roboto] text-[40px] font-bold py-8">
             Thanks for subscribing!
           </h1>
