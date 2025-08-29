@@ -4,6 +4,7 @@ import { Checklist } from "../checklist/Checklist";
 import { Input } from "../input/Input";
 import { Button } from "../button/Button";
 import gsap from "gsap";
+import { SplitText } from "gsap/all";
 
 enum State_Email {
   No_State = "1",
@@ -40,6 +41,8 @@ export const Login = ({
 
   ///UI
   const container = useRef(null);
+  const title = useRef(null);
+  const paragraphs = useRef(null);
 
   useEffect(() => {
     gsap.to(container.current, {
@@ -47,6 +50,34 @@ export const Login = ({
       ease: "elastic.out(1,0.3)",
       y: 20,
 
+      yoyo: true, // vuelve a la posición original
+    });
+  }, []);
+
+  useEffect(() => {
+    gsap.registerPlugin(SplitText);
+
+    gsap.set(title.current, { opacity: 1 });
+    gsap.set(paragraphs.current, { opacity: 1 });
+
+    gsap.registerPlugin(SplitText);
+
+    const split = SplitText.create(title.current, { type: "chars" });
+    const paragraphs_split = SplitText.create(paragraphs.current, {
+      type: "chars",
+    });
+    //now animate each character into place from 20px below, fading in:
+    gsap.from(split.chars, {
+      y: 20,
+      autoAlpha: 0,
+      stagger: 0.01,
+      yoyo: true, // vuelve a la posición original
+    });
+
+    gsap.from(paragraphs_split.chars, {
+      y: 20,
+      autoAlpha: 0,
+      stagger: 0.01,
       yoyo: true, // vuelve a la posición original
     });
   }, []);
@@ -59,10 +90,16 @@ export const Login = ({
       <div className="flex flex-col lg:flex-row-reverse">
         <ResponsiveSignUpImage />
         <div className="flex flex-col lg:w-[448px] lg:justify-center lg:pr-16">
-          <h1 className="text-[Roboto] text-[40px] min-sm:text-[56px] text-[#242742] font-semibold">
+          <h1
+            ref={title}
+            className="text-[Roboto] text-[40px] min-sm:text-[56px] text-[#242742] font-semibold"
+          >
             Stay updated!
           </h1>
-          <p className="text-[Roboto] text-[16px] color-[#242742] font-medium pt-6">
+          <p
+            ref={paragraphs}
+            className="text-[Roboto] text-[16px] color-[#242742] font-medium pt-6"
+          >
             Join 60,000+ product managers receiving monthly updates on:
           </p>
           <Checklist />

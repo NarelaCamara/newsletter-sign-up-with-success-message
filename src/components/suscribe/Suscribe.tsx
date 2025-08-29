@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import iconSuccess from "../../assets/icon-success.svg";
 import { Button } from "../button/Button";
 import gsap from "gsap";
+import { SplitText } from "gsap/all";
 
 export const Suscribe = ({ setFakeSend }: { setFakeSend: Function }) => {
   const container = useRef(null);
@@ -14,6 +15,36 @@ export const Suscribe = ({ setFakeSend }: { setFakeSend: Function }) => {
       ease: "elastic.out(1,0.3)",
       y: 20,
 
+      yoyo: true, // vuelve a la posición original
+    });
+  }, []);
+
+  const title = useRef(null);
+  const paragraphs = useRef(null);
+  useEffect(() => {
+    gsap.registerPlugin(SplitText);
+
+    gsap.set(title.current, { opacity: 1 });
+    gsap.set(paragraphs.current, { opacity: 1 });
+
+    gsap.registerPlugin(SplitText);
+
+    const split = SplitText.create(title.current, { type: "words" });
+    const paragraphs_split = SplitText.create(paragraphs.current, {
+      type: "chars",
+    });
+    //now animate each character into place from 20px below, fading in:
+    gsap.from(split.chars, {
+      y: 20,
+      autoAlpha: 0,
+      stagger: 0.01,
+      yoyo: true, // vuelve a la posición original
+    });
+
+    gsap.from(paragraphs_split.chars, {
+      y: 20,
+      autoAlpha: 0,
+      stagger: 0.01,
       yoyo: true, // vuelve a la posición original
     });
   }, []);
@@ -31,10 +62,13 @@ export const Suscribe = ({ setFakeSend }: { setFakeSend: Function }) => {
             className="w-16"
             ref={icon}
           />
-          <h1 className="text-[Roboto] text-[40px] font-bold py-8">
+          <h1 ref={title} className="text-[Roboto] text-[40px] font-bold py-8">
             Thanks for subscribing!
           </h1>
-          <p className="text-[Roboto] text-[16px] text-[#242742] font-normal">
+          <p
+            ref={paragraphs}
+            className="text-[Roboto] text-[16px] text-[#242742] font-normal"
+          >
             A confirmation email has been sent to{" "}
             <span className="text-[Roboto] text-[16px] text-[#242742] font-medium">
               ash@loremcompany.com
